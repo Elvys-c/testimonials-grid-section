@@ -1,0 +1,239 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+
+@font-face {
+    font-family: 'Barlow Semi Condensed';
+    src: url('../fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf') format(truetype);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Barlow Semi Condensed Medium';
+    src: url('../fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Medium.ttf') format(truetype);
+    font-weight: 600;
+}
+
+:root {
+
+    --Purple-50: hsl(260, 100%, 95%);
+    --Purple-300: hsl(264, 82%, 80%);
+    --Purple-500: hsl(263, 55%, 52%);
+
+    --neutral-White: hsl(0, 0%, 100%);
+    --neutral-Grey-100: hsl(214, 17%, 92%);
+    --neutral-Grey-200: hsl(0, 0%, 81%);
+    --neutral-Grey-400: hsl(224, 10%, 45%);
+    --neutral-Grey-500: hsl(217, 19%, 35%);
+    --neutral-Dark-blue: hsl(219, 29%, 14%);
+    --neutral-Black: hsl(0, 0%, 7%);
+
+    --max-width: 1440px;
+    --tablet: 750px;
+    --min-width: 375px;
+    --card-width: 315px;
+}
+
+* {
+    background-color: var(--neutral-Grey-200);
+}
+
+body {
+    font-family: 'Barlow Semi Condensed';
+    color: var(--neutral-White);
+    max-width: var(--max-width);
+    font-size: 13px;
+}
+
+img {
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+span {
+    align-content: center;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.main, .footer {
+    margin: 0 auto;
+}
+
+.main {
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 5px;
+    max-width: 95vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "testimoni1 testimoni1 testimoni2 testimoni5"
+        "testimoni3 testimoni4 testimoni4 testimoni5"
+    ;
+
+}
+
+.card {
+    display: grid;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background-color: var(--Purple-500);
+    overflow: hidden;
+}
+
+.image {
+    grid-area: image;
+}
+
+.name {
+    grid-area: name;
+}
+
+.verified-graduate {
+    grid-area: verified;
+    background-color: inherit;
+}
+
+.name, .text-one {
+    font-weight: bold;
+}
+
+.name, .text-one, .text-two {
+    background-color: inherit;
+}
+
+.card-header {
+    width: 100px;
+    height: 60px;
+    display: grid;
+    background-color: inherit;
+    margin: 0 0 1rem 0;
+    padding: 0px;
+    grid-template-columns: max-content max-content;
+    column-gap: 1.5rem;
+    grid-template-areas: 
+    "image name"
+    "image verified";
+}
+
+.text-one {
+    font-size: 1.4rem;
+}
+
+.text-two {
+    margin-top: 1rem;
+}
+
+.texts {
+    background-color: inherit;
+}
+
+.image{ 
+    /* outline: 3px solid var(--Purple-300); */
+}
+
+.testimoni1 {
+    grid-area: testimoni1;
+    background-color: var(--Purple-500);
+    color: var(--Purple-50);
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: 95% 0px;
+}
+
+.testimoni2 { 
+    grid-area: testimoni2;
+    background-color: var(--neutral-Grey-500);
+    color: var(--neutral-Grey-100);
+}
+
+.testimoni3 { 
+    grid-area: testimoni3;
+    background-color: var(--neutral-White);
+    color: var(--neutral-Grey-400);
+}
+
+.testimoni4 { 
+    grid-area: testimoni4;
+    background-color: var(--neutral-Dark-blue);
+}
+
+.testimoni5 { 
+    grid-area: testimoni5;
+    background-color: var(--neutral-Grey-100);
+    color: var(--neutral-Grey-400);
+}
+
+.testimoni1 > .card-header > .image{
+    outline: 3px solid var(--Purple-300);
+}
+
+.testimoni4 > .card-header > .image{
+    outline: 3px solid var(--Purple-300);
+}
+
+.footer { font-size: 11px; text-align: center; }
+.footer a { color: hsl(228, 45%, 44%); }
+
+@media (max-width: 750px) {
+
+    body {
+        max-width: var(--tablet);
+    }
+    .container{
+        max-width: 740px;
+    }
+
+    .main {
+        display: grid;
+        gap: 1rem;
+        margin: 0 auto;
+        padding: 5px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "testimoni1 testimoni1"
+            "testimoni2 testimoni3"
+            "testimoni4 testimoni4" 
+            "testimoni5 testimoni5"
+        ;
+    }
+
+    .testimoni1 {
+        background-image: url('../images/bg-pattern-quotation.svg');
+        background-repeat: no-repeat;
+        background-position: 75% 0px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    body {
+        max-width: 375px;
+    }
+    .container{
+        max-width: var(--min-width);
+    }
+
+    .main {
+        display: grid;
+        gap: 1rem;
+        margin: 0 auto;
+        padding: 5px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "testimoni1"
+            "testimoni2"
+            "testimoni3"
+            "testimoni4" 
+            "testimoni5"
+        ;
+    }
+
+    .testimoni1 {
+        background-image: none;
+    }
+}
